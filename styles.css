@@ -1,0 +1,156 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'proxima-nova', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+.navbar {
+  width: 100%;
+  padding: 2rem 2rem;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100px;
+}
+
+.navbar img {
+  max-width: 140px;
+  transition: transform 0.3s ease;
+}
+
+.navbar img:hover {
+  transform: scale(1.05);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 2rem 1rem;
+  background-color: #043B72;
+  color: #fff;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 14pt;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.hero button {
+  background-color: #77a8ba;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #6595a7;
+}
+
+.image-section {
+  width: 100%;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.impact-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f4f4f4;
+}
+
+.impact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.impact-counter {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #043B72;
+}
+
+.testimonials {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial {
+  display: none;
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.testimonial.active {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    height: 100vh;
+  }
+
+  .hero {
+    width: 50%;
+    height: 100%;
+    padding: 4rem;
+  }
+
+  .image-section {
+    width: 50%;
+    height: 100%;
+  }
+
+  .image-section img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
