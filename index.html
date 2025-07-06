@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charity: Water - Campus Chapters</title>
+  <link rel="stylesheet" href="https://use.typekit.net/xyz1abc.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <div class="navbar">
+    <img src="charitywater_logo_horizontal_BlackText.png" alt="Charity: Water Logo" style="height: 80px; width: auto;">
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Lead a Chapter,<br>Fund a Well</h1>
+        <p>Every on-campus fundraiser you organize brings clean water to communities across Africa and South Asia — and you'll get the impact reports to prove it.</p>
+        <button onclick="launchConfetti();">Access the Toolkit</button>
+      </div>
+    </div>
+    <div class="image-section">
+      <img src="https://via.placeholder.com/800x1000.png?text=Image+Placeholder" alt="Women carrying water buckets">
+    </div>
+  </div>
+
+  <div class="impact-section" id="impact">
+    <h2>Wells Funded</h2>
+    <div class="impact-counter" id="counter">0</div>
+  </div>
+
+  <div class="testimonials">
+    <h2>What Students Are Saying</h2>
+    <div class="testimonial active">“Starting a chapter gave our campus a real sense of purpose.” – Jordan, UCLA</div>
+    <div class="testimonial">“We hit our fundraising goal in just 2 weeks!” – Priya, UT Austin</div>
+    <div class="testimonial">“The impact reports made it feel so real.” – Chris, University of Michigan</div>
+  </div>
+
+  <script>
+    function launchConfetti() {
+      confetti({
+        particleCount: 120,
+        spread: 80,
+        origin: { y: 0.6 },
+        colors: ['#ffffff', '#A9C9D8', '#043B72']
+      });
+    }
+
+    let count = 0;
+    const counter = document.getElementById('counter');
+    const interval = setInterval(() => {
+      count += 5;
+      counter.textContent = count;
+      if (count >= 150) {
+        clearInterval(interval);
+      }
+    }, 30);
+
+    let testimonials = document.querySelectorAll('.testimonial');
+    let index = 0;
+    setInterval(() => {
+      testimonials.forEach(t => t.classList.remove('active'));
+      testimonials[index].classList.add('active');
+      index = (index + 1) % testimonials.length;
+    }, 4000);
+  </script>
+</body>
+</html>
